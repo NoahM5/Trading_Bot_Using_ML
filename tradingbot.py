@@ -7,9 +7,9 @@ from lumibot import Trader
 from sentiment_analysis import analyze_sentiment
 
 # Alpaca API configuration
-API_KEY = "YOUR API KEY"
-API_SECRET = "YOUR API SECRET"
-API_ENDPOINT = "https://paper-api.alpaca.markets"
+API_KEY = ""
+API_SECRET = ""
+API_ENDPOINT = ""
 
 ALPACA_CONFIG = {
     "API_KEY": API_KEY,
@@ -20,7 +20,7 @@ ALPACA_CONFIG = {
 class AutomatedTrader(Strategy):
     def setup(self, trade_symbol="SPY", risk_factor=0.5):
         self.trade_symbol = trade_symbol
-        self.sleep_duration = "1D"  # 24 hours
+        self.sleep_duration = "1D" 
         self.previous_trade = None
         self.risk_factor = risk_factor
         self.trade_api = trade_api.REST(base_url=API_ENDPOINT, key_id=API_KEY, secret_key=API_SECRET)
